@@ -4,7 +4,7 @@ class News extends HTMLElement {
         this.attachShadow({mode: "open"})
         this.shadowRoot.innerHTML = `
             <style>
-               #news{
+                #news{
                     background-color: black; 
                     color: white; 
                     padding: 30px;

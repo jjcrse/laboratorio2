@@ -1,4 +1,4 @@
-import getNoticias from "./getnoticias";
+import getNoticias from "./getnoticias.js";
 
 class NewsContainer extends HTMLElement {
     constructor() {
@@ -7,11 +7,13 @@ class NewsContainer extends HTMLElement {
     }
 
     connectedCallback() {
-         
             const news= getNoticias();
             this.shadowRoot.innerHTML = `
             <ul>
-                ${"hola"}
+                ${news.map(noticia => `
+                    <noticia-element titulo="${noticia.title}" author="${noticia.author}"></noticia-element>
+
+                `).join('')}
             </ul>
         `;
     }
