@@ -2,6 +2,7 @@
   "name": "lab2",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
     "url": "https://github.com/jjcrse/laboratorio2/issues"
   },
   "homepage": "https://github.com/jjcrse/laboratorio2#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
 }

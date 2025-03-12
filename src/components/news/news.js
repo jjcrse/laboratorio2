@@ -1,44 +1,76 @@
-class Noticias extends HTMLElement {
-    constructor() {
+class News extends HTMLElement {
+    constructor(){
         super();
+        this.attachShadow({mode: "open"})
+        this.shadowRoot.innerHTML = `
+            <style>
+               #news{
+                    background-color: black; 
+                    color: white; 
+                    padding: 30px;
+                    border-radius: 22px; 
+                    border: 2px solid black; 
+                    max-width: 550px; 
+                    font-family: Arial, sans-serif;
+                }
 
-        this.innerHTML = `
-            <section class="seccion-noticias">
-                <h2 class="titulo-noticias">Últimas</h2>
-                <div class="contenedor-noticias">
-                    ${this.renderizarPublicaciones()}
+                #job{
+                    color: #aaa;
+                    font-size: 14px;
+                    text-transform: uppercase;
+
+                }
+
+                #news-titel{
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin: 10px 0;
+                }
+
+                #information{
+                    font-size: 16px;
+                    color: #bbb;
+                }
+
+                #footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 15px;
+                }
+
+                #date {
+                    font-size: 14px;
+                    color: #888;
+                }
+
+                #autor{
+                    display: flex;
+                    align-items: center;
+                }
+            </style>
+            
+            <div id="news">
+                <div id="job">
+                    <p>Job</p>
                 </div>
-            </section>
-        `;
-    }
-
-    renderizarPublicaciones() {
-        const publicaciones = [
-            {
-                categoria: 'Videojuegos',
-                titulo: 'Fortnite lanza un nuevo modo de juego innovador',
-                descripcion: 'El nuevo juego de fortnite esta mas increible que algun otro que haya sido creado nunca jamas',
-                autor: 'Juan José Correa',
-                avatar: "./images/pp1.jpg",
-                fecha: '10/Junio/2024'
-            },
-        ];
-
-        return publicaciones.map(publicacion => `
-            <div class="publicacion-noticia">
-                <span class="categoria-noticia">${publicacion.categoria}</span>
-                <h3 class="titulo-publicacion">${publicacion.titulo}</h3>
-                <p class="descripcion-publicacion">${publicacion.descripcion}</p>
-                <div class="pie-publicacion">
-                    <div class="info-autor">
-                        <img src="${publicacion.avatar}" alt="${publicacion.autor}" class="avatar-autor">
-                        <span class="nombre-autor">${publicacion.autor}</span>
+                <div id="news-titel">
+                    <p>Titulo de la noticia</p>
+                </div>
+                <div id="information">
+                    <p>Contenido/información/resumen</p>
+                 </div>
+                <div id="footer">
+                    <div id="autor">
+                        <p>nombre del autor</p>
                     </div>
-                    <span class="fecha-publicacion">${publicacion.fecha}</span>
+                    <div id="date">
+                        <p>fecha de publicación</p>
+                    </div>
                 </div>
             </div>
-        `).join('');
+        `;
     }
 }
 
-customElements.define('publicaciones-noticias', Noticias);
+export default News;
