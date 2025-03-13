@@ -17,6 +17,9 @@ class News extends HTMLElement {
     }
 
     render() {
+        const imgSrc = this.getAttribute("img");//Coge el valor del atributo .img del WBC si esa noticia tiene una imagen pues contendra un elemento si no tiene o se pone ./none ese imgsrc sera nula
+        const showImage = imgSrc && imgSrc !== "./none"; //Este se agrego pa que cuando le ponga el ./none en la imgsrc no muestre nada osea false y pues si tiene sera true
+        
         this.shadowRoot.innerHTML = `
             <style>
                 #news {
@@ -32,9 +35,10 @@ class News extends HTMLElement {
                     gap: 10px;
                 }
 
-                img {
+                .news-img {
                     width: 100%;
                     border-radius: 10px;
+                    display: ${showImage ? "block" : "none"};
                 }
 
                 #news-titel {
@@ -80,7 +84,7 @@ class News extends HTMLElement {
             </style>
             
             <div id="news">
-                <img src="${this.getAttribute("img") || ""}" alt="Imagen de la noticia">
+                ${showImage ? `<img class="news-img" src="${imgSrc}" alt="Imagen de la noticia">` : ""}
                 <div id="news-titel">${this.getAttribute("titulo") || "Sin título"}</div>
                 <div id="subtitulo">${this.getAttribute("subtitulo") || "Sin subtítulo"}</div>
                 <div id="info">${this.getAttribute("info") || "Sin información disponible"}</div>
@@ -98,3 +102,6 @@ class News extends HTMLElement {
 
 customElements.define("news-element", News);
 export default News;
+
+//En la linea 41 del diseño pues se utiliza para que si es true tendra un display: block; osea que se 
+//muestra y pues si no tiene aparece false y tendra un display: none; y lo ocultara y no lo deja sin un espacio vacio
