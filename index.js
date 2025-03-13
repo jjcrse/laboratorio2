@@ -5,4 +5,8 @@ import "./src/components/news/NewsContainer.js";
 
 customElements.define("componente-header", Header);
 customElements.define("noticia-element", Noticias);
-customElements.define("noticia-container", NewsContainer);
+ 
+
+//importa los componentes para poder ponerlos en el html
+
+

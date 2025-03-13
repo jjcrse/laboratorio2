@@ -30,7 +30,7 @@ export default function getNoticias() {
         {
             title: "La nueva consola portatil",
             subtitulo: "Xbox propone una nueva consola portatil pero Asus le intenta quitar la idea",
-            info: "La consola portatil de XBOX va tomando forma, y no sera fabricada por Microsoft, sino que estará creada por ASUS",
+            info: "La consola portatil de XBOX va tomando forma, y no sera fabricada por Microsoft, sino que estará creada por ASUS generando mas competencia",
             author: "3D juegos",
             fecha: "20 de Diciembre de 2024",
             img: "./none",
@@ -57,3 +57,5 @@ export default function getNoticias() {
         }      
     ];
 }
+
+//*Es toda la lista para que se reemplacen en el web component

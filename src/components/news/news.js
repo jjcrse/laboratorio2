@@ -1,26 +1,27 @@
 class News extends HTMLElement {
-    constructor() {
-        super();
+    constructor() {         
+        super();           
         this.attachShadow({ mode: "open" });
     }
 
     static get observedAttributes() {
-        return ["titulo", "subtitulo", "info", "author", "fecha", "img", "imagenautor"];
+        return ["titulo", "subtitulo", "info", "author", "fecha", "img", "imagenautor"]; 
     }
 
-    attributeChangedCallback() {
+    attributeChangedCallback() {  
         this.render();
     }
 
-    connectedCallback() {
+    connectedCallback() { 
         this.render();
     }
 
-    render() {
+    render() {     
         const imgSrc = this.getAttribute("img");
-        const showImage = imgSrc && imgSrc !== "./none";
+        const showImage = imgSrc && imgSrc !== "./none"; 
 
-        this.shadowRoot.innerHTML = `
+        this.shadowRoot.innerHTML = 
+         `
             <style>
                 * {
                     box-sizing: border-box;
@@ -108,7 +109,7 @@ class News extends HTMLElement {
             </style>
             
             <div class="news-card">
-                ${showImage ? `<img class="news-img" src="${imgSrc}" alt="Imagen de la noticia">` : ""}
+                ${showImage ? `<img class="news-img" src="${imgSrc}" alt="Imagen de la noticia">` : ""} 
                 <div class="news-content">
                     <div class="news-title">${this.getAttribute("titulo") || "Sin título"}</div>
                     <div class="news-subtitle">${this.getAttribute("subtitulo") || "Sin subtítulo"}</div>
@@ -129,5 +130,24 @@ class News extends HTMLElement {
 customElements.define("news-element", News);
 export default News;
 
-//En la linea 50 del diseño pues se utiliza para que si es true tendra un display: block; osea que se 
-//muestra y pues si no tiene aparece false y tendra un display: none; y lo ocultara y no lo deja sin un espacio vacio
+//Se crea pues un HTML Personalizado desde linea 1 hasta linea 4
+
+// linea 8 Aqui definimos atributos
+
+// Linea 11 Aqui se actualiza el componente cuando cambiamos los atributos
+
+
+// Linea 15 Con este hacemos el renderizado para que cuando el componente se inserta en el DOM
+
+
+//*  linea 20 la imgsrc coge el atributo img normal que es la url de la imagen de la noticia
+
+//*  linea 21 esta comprueba si el imgsrc es valido o es ./none,Tambien como para decidir si se muestra o se oculta
+
+//&linea 22 van los estilos hasta la 109
+
+//? linea 122 la construccion de contenido hasta la 129
+
+//*En la linea 50 se usa para mostrar o no mostrar la imagen si es valida o no
+
+//* Y pues los dos ultimos codigos son para registrar el componente e importarlo a los otros archivos 
