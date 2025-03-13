@@ -1,9 +1,9 @@
-class Header extends HTMLElement {
+class Header extends HTMLElement { 
     constructor() {
         super();
-        const shadow = this.attachShadow({ mode: 'open' });
+        const shadow = this.attachShadow({ mode: 'open' }); 
         shadow.innerHTML = `
-            <style>
+            <style> 
                 :host {
                     display: block;
                     font-family: 'Poppins', sans-serif;
@@ -64,7 +64,7 @@ class Header extends HTMLElement {
                     transform: scale(1.05);
                 }
             </style>
-            <header>
+            <header> 
                 <div class="logo-container">
                     <img class="logo" src="imagenes/Logo.png" alt="Logo">
                 </div>
@@ -89,3 +89,14 @@ class Header extends HTMLElement {
 
 
 export default Header
+
+//Linea 1 lo estiende con un html element para crear un webcomponent
+
+//*Linea 4 usa el shadow DOM this.attachShadow({ mode: 'open' }) para encapsular los estilos y la estructura
+
+//&Linea 6 hasta linea 66 son estilos
+
+//? Linea 67 hasta 83 se le da el logo a la izquierda 
+//?Se le pone el enlace en las secciones (Videojuegos, Comentarios, Lanzamientos, Noticias) y los botones
+
+//*Linea 91 ayuda a importar y utilizar el Header en otros archivos

@@ -22,3 +22,5 @@ acorde a la informacion que se pasa
 
 tambien se agrego en el index html  el
 div con el h1 de Por ulitmo
+
+se agregaron comentarios con las funcionalidades para no olvidarse 
