@@ -33,7 +33,7 @@ body {
     text-shadow: 1px 1px 8px rgba(0, 204, 255, 0.7);
 }
 
-/* Efecto sutil de niebla */
+
 .overlay {
     position: fixed;
     width: 100%;
