@@ -17,83 +17,109 @@ class News extends HTMLElement {
     }
 
     render() {
-        const imgSrc = this.getAttribute("img");//Coge el valor del atributo .img del WBC si esa noticia tiene una imagen pues contendra un elemento si no tiene o se pone ./none ese imgsrc sera nula
-        const showImage = imgSrc && imgSrc !== "./none"; //Este se agrego pa que cuando le ponga el ./none en la imgsrc no muestre nada osea false y pues si tiene sera true
-        
+        const imgSrc = this.getAttribute("img");
+        const showImage = imgSrc && imgSrc !== "./none";
+
         this.shadowRoot.innerHTML = `
             <style>
-                #news {
-                    background-color: black; 
-                    color: white; 
-                    padding: 20px;
-                    border-radius: 15px; 
-                    border: 2px solid black; 
-                    max-width: 600px; 
-                    font-family: Arial, sans-serif;
+                * {
+                    box-sizing: border-box;
+                }
+
+                :host {
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    background-color: #1e293b; /* Azul oscuro elegante */
+                    color: white;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                    font-family: 'Arial', sans-serif;
+                }
+
+                :host(:hover) {
+                    transform: translateY(-5px);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
                 }
 
                 .news-img {
                     width: 100%;
-                    border-radius: 10px;
+                    height: 200px;
+                    object-fit: cover;
                     display: ${showImage ? "block" : "none"};
                 }
 
-                #news-titel {
-                    font-size: 22px;
-                    font-weight: bold;
-                    margin: 5px 0;
+                .news-content {
+                    padding: 15px;
                 }
 
-                #subtitulo {
+                .news-title {
                     font-size: 18px;
-                    color: #ddd;
+                    font-weight: bold;
+                    margin-bottom: 5px;
                 }
 
-                #info {
+                .news-subtitle {
                     font-size: 16px;
-                    color: #bbb;
+                    color: #b0b0b0;
+                    margin-bottom: 10px;
                 }
 
-                #footer {
+                .news-info {
+                    font-size: 14px;
+                    color: #d1d5db;
+                    line-height: 1.4;
+                }
+
+                .news-footer {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    margin-top: 10px;
+                    padding: 12px 15px;
+                    font-size: 12px;
+                    color: #888;
+                    background-color: #0f172a;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
-                #author-container {
+                .author-container {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: 8px;
                 }
 
-                #author-img {
-                    width: 30px;
-                    height: 30px;
+                .author-img {
+                    width: 28px;
+                    height: 28px;
                     border-radius: 50%;
                     object-fit: cover;
                 }
 
-                #date {
+                .author-name {
                     font-size: 14px;
-                    color: #888;
+                    color: #e5e7eb;
+                }
+
+                .news-date {
+                    font-size: 12px;
+                    color: #9ca3af;
                 }
             </style>
             
-            <div id="news">
+            <div class="news-card">
                 ${showImage ? `<img class="news-img" src="${imgSrc}" alt="Imagen de la noticia">` : ""}
-                <div id="news-titel">${this.getAttribute("titulo") || "Sin título"}</div>
-                <div id="subtitulo">${this.getAttribute("subtitulo") || "Sin subtítulo"}</div>
-                <div id="info">${this.getAttribute("info") || "Sin información disponible"}</div>
-                <div id="footer">
-                    <div id="author-container">
-                        <img id="author-img" src="${this.getAttribute("imagenautor") || ""}" alt="Autor">
-                        <p>${this.getAttribute("author") || "Anónimo"}</p>
+                <div class="news-content">
+                    <div class="news-title">${this.getAttribute("titulo") || "Sin título"}</div>
+                    <div class="news-subtitle">${this.getAttribute("subtitulo") || "Sin subtítulo"}</div>
+                    <div class="news-info">${this.getAttribute("info") || "Sin información disponible"}</div>
+                </div>
+                <div class="news-footer">
+                    <div class="author-container">
+                        <img class="author-img" src="${this.getAttribute("imagenautor") || ""}" alt="Autor">
+                        <span class="author-name">${this.getAttribute("author") || "Anónimo"}</span>
                     </div>
-                    <div id="date">${this.getAttribute("fecha") || "Fecha desconocida"}</div>
+                    <span class="news-date">${this.getAttribute("fecha") || "Fecha desconocida"}</span>
                 </div>
             </div>
         `;
@@ -103,5 +129,6 @@ class News extends HTMLElement {
 customElements.define("news-element", News);
 export default News;
 
-//En la linea 41 del diseño pues se utiliza para que si es true tendra un display: block; osea que se 
+//En la linea 50 del diseño pues se utiliza para que si es true tendra un display: block; osea que se 
 //muestra y pues si no tiene aparece false y tendra un display: none; y lo ocultara y no lo deja sin un espacio vacio
+//Pero esa funcion ya no se usa porque me toca preguntarle al profe mañana jueves 13/3/2025

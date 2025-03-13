@@ -10,3 +10,7 @@ Pipe pone los componentes que vas a hacer en js dentro de divs en el index.html 
 
 En el archivo imagenes si tenes descargas algunas imagenes
 pues las pones ahi,tambien esta el logo por si necesitas utilizarlo
+
+Ahi ya edite el css de todo para que lo sepas y actulize las cards para que se vieran con sus textos y sus css
+
+/Tambien se estilizo desde el getnoticias para que las cards quedaran igual
