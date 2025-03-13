@@ -1,60 +1,73 @@
 class Header extends HTMLElement {
     constructor() {
         super();
-        this.innerHTML = `
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.innerHTML = `
             <style>
                 :host {
                     display: block;
+                    font-family: 'Poppins', sans-serif;
                 }
                 header {
-                    background-color: #1A1A1A; 
-                    color: #FFFFFF; 
-                    padding: 15px 30px; 
+                    background-color: #121212;
+                    color: #FFFFFF;
+                    padding: 20px 40px;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+                    border-bottom: 2px solid #3C93FF;
                 }
-                h1 {
-                    margin: 0;
-                    font-size: 1.5rem;
-                    color: #3C93FF; 
+                .logo-container {
+                    display: flex;
+                    align-items: center;
                 }
-                nav {
-                    margin: 0;
+                .logo {
+                    width: 50px;
+                    height: 50px;
                 }
                 nav ul {
                     list-style: none;
                     padding: 0;
                     margin: 0;
                     display: flex;
-                    gap: 20px; 
+                    gap: 25px;
                 }
                 nav ul li a {
-                    color: #FFFFFF; 
+                    color: #FFFFFF;
                     text-decoration: none;
-                    font-weight: bold;
-                    transition: color 0.3s, transform 0.3s; 
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    transition: color 0.3s, transform 0.2s;
                 }
                 nav ul li a:hover {
-                    color: #3C93FF; 
+                    color: #3C93FF;
+                    transform: translateY(-2px);
+                }
+                .button-container {
+                    display: flex;
+                    gap: 15px;
                 }
                 .button {
-                    background-color: #3C93FF; 
+                    background-color: #3C93FF;
                     color: white;
                     border: none;
-                    padding: 10px 20px;
-                    border-radius: 5px;
+                    padding: 12px 25px;
+                    border-radius: 8px;
                     cursor: pointer;
                     font-size: 1rem;
-                    transition: background-color 0.3s;
+                    font-weight: 600;
+                    transition: background-color 0.3s, transform 0.2s;
                 }
                 .button:hover {
-                    background-color: #1A73E8; 
+                    background-color: #1A73E8;
+                    transform: scale(1.05);
                 }
             </style>
             <header>
-                <h1>Juegos</h1>
+                <div class="logo-container">
+                    <img class="logo" src="imagenes/Logo.png" alt="Logo">
+                </div>
                 <nav>
                     <ul>
                         <li><a href="#features">Videojuegos</a></li>
@@ -63,13 +76,16 @@ class Header extends HTMLElement {
                         <li><a href="#faq">Noticias</a></li>
                     </ul>
                 </nav>
-                <div>
+                <div class="button-container">
                     <button class="button">Registrarse</button>
-                    <button class="button">Sign up</button>
+                    <button class="button">Iniciar Sesion</button>
                 </div>
             </header>
         `;
     }
 }
 
-export default Header;
+
+
+
+export default Header

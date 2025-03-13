@@ -6,3 +6,7 @@ algunos arreglos que hicimos pero sigue sin aparecer las caracteristicas de cada
 
 
 Pipe pone los componentes que vas a hacer en js dentro de divs en el index.html para asi customizarlos desde el index.cc principal
+
+
+En el archivo imagenes si tenes descargas algunas imagenes
+pues las pones ahi,tambien esta el logo por si necesitas utilizarlo

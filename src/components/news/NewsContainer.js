@@ -1,5 +1,5 @@
 import getNoticias from "./getnoticias.js";
-import "./News.js"; // Importar el componente News
+import "./News.js"; // Importar el componente News por si lo necesitas para imprimir las cards pero seria casi igual
 
 class NewsContainer extends HTMLElement {
     constructor() {
@@ -10,15 +10,23 @@ class NewsContainer extends HTMLElement {
     connectedCallback() {
         const news = getNoticias();
         this.shadowRoot.innerHTML = `
-            <ul>
+            <div>
                 ${news
                     .map(
                         (noticia) => `
-                        <news-element titulo="${noticia.title}" author="${noticia.author}"></news-element>
+                        <news-element 
+                            titulo="${noticia.title}" 
+                            subtitulo="${noticia.subtitulo}"
+                            info="${noticia.info}"
+                            author="${noticia.author}"
+                            fecha="${noticia.fecha}"
+                            img="${noticia.img}"
+                            imagenautor="${noticia.imagenAutor}">
+                        </news-element>
                     `
                     )
                     .join("")}
-            </ul>
+            </div>
         `;
     }
 }
