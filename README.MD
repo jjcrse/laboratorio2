@@ -25,4 +25,4 @@ div con el h1 de Por ulitmo
 
 se agregaron comentarios con las funcionalidades para no olvidarse 
 
-se cambiaron las cosas en mi rama para asi copiarlos en el main para que puedas utilizarlo
+se cambiaron los componentes en mi rama para asi copiarlos en el main para que puedas utilizarlo
