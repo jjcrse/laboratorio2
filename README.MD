@@ -19,3 +19,6 @@ se modifico el css para que se vea mejor y se adapte a la pantalla
 
 Ya se pudo solucionar en News lo de las noticias sin imagen para que se adapte a la pantalla y se vea bien 
 acorde a la informacion que se pasa
+
+tambien se agrego en el index html  el
+div con el h1 de Por ulitmo
