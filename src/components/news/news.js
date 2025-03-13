@@ -131,4 +131,3 @@ export default News;
 
 //En la linea 50 del diseño pues se utiliza para que si es true tendra un display: block; osea que se 
 //muestra y pues si no tiene aparece false y tendra un display: none; y lo ocultara y no lo deja sin un espacio vacio
-//Pero esa funcion ya no se usa porque me toca preguntarle al profe mañana jueves 13/3/2025

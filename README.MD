@@ -16,3 +16,6 @@ Ahi ya edite el css de todo para que lo sepas y actulize las cards para que se v
 /Tambien se estilizo desde el getnoticias para que las cards quedaran igual
 
 se modifico el css para que se vea mejor y se adapte a la pantalla
+
+Ya se pudo solucionar en News lo de las noticias sin imagen para que se adapte a la pantalla y se vea bien 
+acorde a la informacion que se pasa

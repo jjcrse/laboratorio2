@@ -15,8 +15,10 @@ body {
 }
 
 #titulos {
-    padding: 20px 470px;
+    padding: 0px 470px;
     box-sizing: border-box;
+    flex: auto;
+    width: auto;
 }
 
 #titulos h1 {

@@ -1,5 +1,5 @@
 import getNoticias from "./getnoticias.js";
-import "./News.js";// Importar el componente News por si lo necesitas para imprimir las cards pero seria casi igual
+import "./News.js";
 
 class NewsContainer extends HTMLElement {
     constructor() {
