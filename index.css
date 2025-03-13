@@ -1,3 +1,12 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 body {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: #e0e0e0;
@@ -6,7 +15,8 @@ body {
 }
 
 #titulos {
-    padding: 20px 460px;
+    padding: 20px 470px;
+    box-sizing: border-box;
 }
 
 #titulos h1 {
