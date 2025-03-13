@@ -14,3 +14,5 @@ pues las pones ahi,tambien esta el logo por si necesitas utilizarlo
 Ahi ya edite el css de todo para que lo sepas y actulize las cards para que se vieran con sus textos y sus css
 
 /Tambien se estilizo desde el getnoticias para que las cards quedaran igual
+
+se modifico el css para que se vea mejor y se adapte a la pantalla
