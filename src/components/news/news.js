@@ -1,10 +1,25 @@
 class News extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" });
+    }
+
+    static get observedAttributes() {
+        return ["titulo", "author"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.render();
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
         this.shadowRoot.innerHTML = `
             <style>
-                #news{
+                #news {
                     background-color: black; 
                     color: white; 
                     padding: 30px;
@@ -14,63 +29,25 @@ class News extends HTMLElement {
                     font-family: Arial, sans-serif;
                 }
 
-                #job{
-                    color: #aaa;
-                    font-size: 14px;
-                    text-transform: uppercase;
-
-                }
-
-                #news-titel{
+                #news-titel {
                     font-size: 22px;
                     font-weight: bold;
                     margin: 10px 0;
                 }
 
-                #information{
-                    font-size: 16px;
-                    color: #bbb;
-                }
-
-                #footer {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-top: 15px;
-                }
-
-                #date {
+                #autor {
+                    color: #aaa;
                     font-size: 14px;
-                    color: #888;
-                }
-
-                #autor{
-                    display: flex;
-                    align-items: center;
                 }
             </style>
             
             <div id="news">
-                <div id="job">
-                    <p>Job</p>
-                </div>
-                <div id="news-titel">
-                    <p>Titulo de la noticia</p>
-                </div>
-                <div id="information">
-                    <p>Contenido/información/resumen</p>
-                 </div>
-                <div id="footer">
-                    <div id="autor">
-                        <p>nombre del autor</p>
-                    </div>
-                    <div id="date">
-                        <p>fecha de publicación</p>
-                    </div>
-                </div>
+                <div id="news-titel">${this.getAttribute("titulo") || "Sin título"}</div>
+                <div id="autor">Autor: ${this.getAttribute("author") || "Anónimo"}</div>
             </div>
         `;
     }
 }
 
+customElements.define("news-element", News);
 export default News;
