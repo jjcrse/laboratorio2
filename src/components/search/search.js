@@ -12,7 +12,7 @@ class SearchBarCategories extends HTMLElement {
             gap: 10px;
             padding: 20px;
             border-radius: 8px;
-            margin-left: 450px;
+            margin-left: 460px;
           }
           button, .search {
             background: #222;

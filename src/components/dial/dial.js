@@ -34,7 +34,7 @@ class CustomDial extends HTMLElement {
                     gap: 14px;
                     padding: 30px 0;
                     border-radius: 10px;
-                    margin-left: 260px;
+                    margin-left: 460px;
                     margin-botton:5px;
                 }
 
