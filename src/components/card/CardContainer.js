@@ -20,14 +20,13 @@ class CardContainer extends HTMLElement {
                     flex-wrap: wrap;
                     gap: 20px;
                     justify-content: center;
-                    padding: 20px;
-                    background-color: #111827;
+                    padding: 0px;
+                    
                 }
                 .news-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
                     gap: 20px;
-                    width: 100%;
                     max-width: 1200px;
                 }
             </style>
