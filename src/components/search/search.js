@@ -21,18 +21,29 @@ class SearchBarCategories extends HTMLElement {
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+          }
+          button:hover, .search:hover {
+            background: #333;
+            transform: scale(1.05);
           }
           .search {
             display: flex;
             align-items: center;
             padding: 5px 10px;
+            transition: box-shadow 0.3s;
           }
-          input {
+          .search input {
             background: none;
             border: none;
             color: white;
             outline: none;
             padding: 5px;
+            transition: width 0.3s;
+            width: 80px;
+          }
+          .search:hover input {
+            width: 150px;
           }
         </style>
         <div class="container">
@@ -42,12 +53,13 @@ class SearchBarCategories extends HTMLElement {
           <button>Design</button>
           <button>Engineering</button>
           <div class="search">
-            <input type="text" placeholder="Search..." />
+             <input type="text" placeholder="Search..." />
           </div>
         </div>
       `;
     }
   }
+  
   
   customElements.define('search-bar-categories', SearchBarCategories);
   export default SearchBarCategories

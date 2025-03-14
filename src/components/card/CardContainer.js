@@ -15,7 +15,14 @@ class CardContainer extends HTMLElement {
         const cards = await getCards();
         this.shadowRoot.innerHTML = `
             <style>
-                
+                :host {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center;
+                    padding: 20px;
+                    background-color: #111827;
+                }
                 .news-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

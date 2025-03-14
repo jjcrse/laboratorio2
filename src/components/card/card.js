@@ -81,6 +81,10 @@ class Cards extends HTMLElement {
                     font-size: 12px;
                     color: #9ca3af;
                 }
+                :host(:hover) {
+                    transform: translateY(-5px);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+                }
             </style>
             <div class="news">
                 <div class="news-header">${this.getAttribute("category") || "Category"}</div>
