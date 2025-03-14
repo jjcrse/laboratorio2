@@ -22,6 +22,20 @@ class CardContainer extends HTMLElement {
                     max-width: 600px;
                     margin: auto;
                 }
+                :host {
+                    display: flex;
+                    justify-content: center;
+                    padding: 20px;
+                    width: 100%;
+                }
+
+                .news-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 20px;
+                    max-width: 1000px;
+                    width: 100%;
+                }
             </style>
             <div class="container">
                 ${cards.map(card => `

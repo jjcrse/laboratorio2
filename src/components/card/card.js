@@ -74,6 +74,40 @@ class Cards extends HTMLElement {
                     color: #d1d5db;
                     line-height: 1.4;
                 }
+                .news-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 12px 15px;
+                    font-size: 12px;
+                    color: #888;
+                    background-color: #0f172a;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .author-img {
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                .author-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                .author-name {
+                    font-size: 14px;
+                    color: #e5e7eb;
+                }
+                .news-date {
+                    font-size: 12px;
+                    color: #9ca3af;
+                }
+                .author-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
             </style>
             
             <div class="news">
@@ -82,7 +116,14 @@ class Cards extends HTMLElement {
                     <div class="news-subtitle">${this.getAttribute("summary") || "Sin subtítulo"}</div>
                     <div class="news-info">${this.getAttribute("author1") || "Sin información disponible"}</div>
                     <div class="news-info">${this.getAttribute("author2") || "Sin información disponible"}</div>
-                    <div class="news-info">${this.getAttribute("date") || "Sin información disponible"}</div>
+                </div>
+                <div class="news-footer">
+                    <div class="author-container">
+                        <img class="author-img" src="${this.getAttribute("imgSrc1") || ""}" alt="Autor">
+                        <span class="author-name">${this.getAttribute("author1") || "Anónimo"}</span>
+                        <span class="news-date">${this.getAttribute("date") || "Fecha desconocida"}</span>
+                    </div>
+                    
                 </div>
             </div>
         `;

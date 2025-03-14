@@ -1,39 +1,42 @@
 export default function getcards() {
     return [
         {
-            category: "Engineering",
-            title: "The future of AI in software engineering",
-            summary: "Artificial intelligence is revolutionizing software engineering. Explore how AI-driven tools are enhancing development processes and creating new possibilities for the industry.",
-            author1: "Remy Sharp",
-            author2: "Travis Howard",
+            category: "Actualizaciones",
+            title: "El nuevo sistema de perks llega a Overwatch2",
+            summary: "Apoderate de los enemigos con el nuevo sistema de perks en todos los modos de juego y para todos los personajes.",
+            author1: "Blizzard",
+            author2: "Overwatch2",
             date: "July 14, 2021",
-            imgSrc1: "https://via.placeholder.com/40",
+            imgSrc1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT27sifUcG9Dzy-MfVH0AKXxW7rpdjjBZHJbA&s",
             imgSrc2: "https://via.placeholder.com/40"
         },
         {
-            category: "Product",
-            title: "Driving growth with user-centric product design",
-            summary: "Our user-centric product design approach is driving significant growth. Learn about the strategies and methodologies we use to build products that truly resonate with users.",
+            category: "Bugs",
+            title: "Reportan nuevo bug en Warzone",
+            summary: "Nuevo bug que impide poner el equipamiento tactico y letal en los armamentos personalizados. El bug se ha presentado desde la ultima actualización de la semana pasada.",
             author1: "Erica Johns",
             author2: "",
+            date: "July 14, 2021",
             imgSrc1: "https://via.placeholder.com/40",
             imgSrc2: ""
         },
         {
-            category: "Design",
-            title: "Embracing minimalism in modern design",
-            summary: "Minimalism is a key trend in modern design. Learn about the key principles that make minimalist designs effective and aesthetically pleasing.",
+            category: "Nuevos personajes",
+            title: "El nuevo agente duelista de Valorant",
+            summary: "La segunda actualizacion del año 2025 trae a nosotros nuevos cosmeticos, pero ams importante un nuevo agente de cacracter duelista.",
             author1: "Kate Morrison",
             author2: "",
+            date: "July 14, 2021",
             imgSrc1: "https://via.placeholder.com/40",
             imgSrc2: ""
         },
         {
-            category: "Company",
-            title: "Cultivating a culture of creativity",
-            summary: "Innovation is at the core of our company culture. Learn about the various initiatives we have implemented to inspire and drive groundbreaking solutions in our industry.",
+            category: "Colaboraciones",
+            title: "Invencible llega a Fortnite",
+            summary: "Las nuevas skins de Invencible llegan a Fortnite, con cosmeticos directos de la serie animada y bailes unicos con el soundtrack de la serie.",
             author1: "Cindy Baker",
             author2: "",
+            date: "July 14, 2021",
             imgSrc1: "https://via.placeholder.com/40",
             imgSrc2: ""
         }
