@@ -1,46 +1,75 @@
 class CustomDial extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
+
+        this.currentPage = 1;
+        this.totalPages = 10;
+
+        this.render();
     }
 
     connectedCallback() {
-        this.render();
+        this.shadowRoot.addEventListener("click", (event) => {
+            if (event.target.classList.contains("page-number")) {
+                this.currentPage = parseInt(event.target.textContent);
+                this.updateSelection();
+                this.dispatchEvent(new CustomEvent("pageChange", { detail: this.currentPage }));
+            }
+        });
+    }
+
+    updateSelection() {
+        this.shadowRoot.querySelectorAll(".page-number").forEach((el) => {
+            el.classList.toggle("active", parseInt(el.textContent) === this.currentPage);
+        });
     }
 
     render() {
         this.shadowRoot.innerHTML = `
             <style>
-                .dial-container {
-                    position: fixed;
-                    bottom: 20px;
-                    right: 20px;
+                .pagination {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: #000;
+                    padding: 10px;
+                    border-radius: 10px;
+                    background: #0f172a;
                 }
-                .dial-button {
-                    width: 56px;
-                    height: 56px;
-                    background-color: #1976d2;
-                    color: white;
-                    border: none;
-                    border-radius: 50%;
-                    font-size: 24px;
+
+                .page-number {
+                    width: 30px;
+                    height: 30px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    color: white;
+                    font-size: 16px;
                     cursor: pointer;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    transition: background-color 0.3s;
+                    border-radius: 50%;
+                    transition: background 0.3s, transform 0.2s;
                 }
-                .dial-button:hover {
-                    background-color: #1565c0;
+
+                .page-number.active {
+                    background: white;
+                    color: black;
+                    font-weight: bold;
+                    transform: scale(1.2);
+                }
+
+                .page-number:hover {
+                    background: rgba(255, 255, 255, 0.3);
                 }
             </style>
-            <div class="dial-container">
-                <button class="dial-button">+</button>
+            <div class="pagination">
+                ${Array.from({ length: this.totalPages }, (_, i) => 
+                    `<div class="page-number ${i + 1 === this.currentPage ? "active" : ""}">${i + 1}</div>`
+                ).join("")}
             </div>
         `;
     }
 }
 
-customElements.define('custom-dial', CustomDial);
+customElements.define("custom-dial", CustomDial);
 export default CustomDial;
