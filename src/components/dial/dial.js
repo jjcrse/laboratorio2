@@ -31,16 +31,16 @@ class CustomDial extends HTMLElement {
                 .pagination {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
-                    background: #000;
-                    padding: 10px;
+                    gap: 14px;
+                    padding: 30px 0;
                     border-radius: 10px;
-                    background: #0f172a;
+                    margin-left: 260px;
+                    margin-botton:5px;
                 }
 
                 .page-number {
-                    width: 30px;
-                    height: 30px;
+                    width: 32px;
+                    height: 32px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -49,6 +49,7 @@ class CustomDial extends HTMLElement {
                     cursor: pointer;
                     border-radius: 50%;
                     transition: background 0.3s, transform 0.2s;
+                    font-family: Arial, sans-serif;
                 }
 
                 .page-number.active {
@@ -59,7 +60,7 @@ class CustomDial extends HTMLElement {
                 }
 
                 .page-number:hover {
-                    background: rgba(255, 255, 255, 0.3);
+                    background: rgba(255, 255, 255, 0.2);
                 }
             </style>
             <div class="pagination">
