@@ -57,5 +57,4 @@ export default function getNoticias() {
         }      
     ];
 }
-
 //*Es toda la lista para que se reemplacen en el web component

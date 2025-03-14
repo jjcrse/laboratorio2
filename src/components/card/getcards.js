@@ -1,44 +1,22 @@
-export default function getcards() {
+export default function getCards() {
     return [
         {
-            category: "Actualizaciones",
-            title: "El nuevo sistema de perks llega a Overwatch2",
-            summary: "Apoderate de los enemigos con el nuevo sistema de perks en todos los modos de juego y para todos los personajes.",
-            author1: "Blizzard",
-            author2: "Overwatch2",
+            category: "Engineering",
+            title: "The future of AI in software engineering",
+            summary: "Artificial intelligence is revolutionizing software engineering. Explore how AI-driven tools are enhancing development processes and improving software...",
+            author1: "Remy Sharp, Travis Howard",
             date: "July 14, 2021",
-            imgSrc1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT27sifUcG9Dzy-MfVH0AKXxW7rpdjjBZHJbA&s",
-            imgSrc2: "https://via.placeholder.com/40"
+            imgSrc1: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Steve_Jobs.jpg/800px-Steve_Jobs.jpg",
+            imgSrc2: "https://randomuser.me/api/portraits/women/44.jpg"
         },
         {
-            category: "Bugs",
-            title: "Reportan nuevo bug en Warzone",
-            summary: "Nuevo bug que impide poner el equipamiento tactico y letal en los armamentos personalizados. El bug se ha presentado desde la ultima actualización de la semana pasada.",
+            category: "Product",
+            title: "Driving growth with user-centric product design",
+            summary: "Our user-centric product design approach is driving significant growth. Learn about the strategies we employ to create products that resonate with users.",
             author1: "Erica Johns",
-            author2: "",
             date: "July 14, 2021",
-            imgSrc1: "https://via.placeholder.com/40",
-            imgSrc2: ""
-        },
-        {
-            category: "Nuevos personajes",
-            title: "El nuevo agente duelista de Valorant",
-            summary: "La segunda actualizacion del año 2025 trae a nosotros nuevos cosmeticos, pero ams importante un nuevo agente de cacracter duelista.",
-            author1: "Kate Morrison",
-            author2: "",
-            date: "July 14, 2021",
-            imgSrc1: "https://via.placeholder.com/40",
-            imgSrc2: ""
-        },
-        {
-            category: "Colaboraciones",
-            title: "Invencible llega a Fortnite",
-            summary: "Las nuevas skins de Invencible llegan a Fortnite, con cosmeticos directos de la serie animada y bailes unicos con el soundtrack de la serie.",
-            author1: "Cindy Baker",
-            author2: "",
-            date: "July 14, 2021",
-            imgSrc1: "https://via.placeholder.com/40",
-            imgSrc2: ""
+            imgSrc1: "https://randomuser.me/api/portraits/women/45.jpg",
+            imgSrc2: "https://via.placeholder.com/40"
         }
     ];
 }

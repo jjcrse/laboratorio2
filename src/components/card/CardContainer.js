@@ -1,5 +1,5 @@
-import getcards from "./getcards.js";
 import "./card.js";
+import getCards from "./getcards.js";
 
 class CardContainer extends HTMLElement {
     constructor() {
@@ -7,37 +7,24 @@ class CardContainer extends HTMLElement {
         this.attachShadow({ mode: "open" });
     }
 
-    connectedCallback() {
+    async connectedCallback() {
         this.render();
     }
 
-    render() {
-        const cards = getcards();
+    async render() {
+        const cards = await getCards();
         this.shadowRoot.innerHTML = `
             <style>
-                .container {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 15px;
-                    max-width: 600px;
-                    margin: auto;
-                }
-                :host {
-                    display: flex;
-                    justify-content: center;
-                    padding: 20px;
-                    width: 100%;
-                }
-
+                
                 .news-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
                     gap: 20px;
-                    max-width: 1000px;
                     width: 100%;
+                    max-width: 1200px;
                 }
             </style>
-            <div class="container">
+            <div class="news-grid">
                 ${cards.map(card => `
                     <custom-news 
                         category="${card.category}"
@@ -46,7 +33,8 @@ class CardContainer extends HTMLElement {
                         author1="${card.author1}"
                         author2="${card.author2}"
                         date="${card.date}"
-                        img-src="${card.imgSrc1}"
+                        imgSrc1="${card.imgSrc1}"
+                        imgSrc2="${card.imgSrc2}"
                     ></custom-news>
                 `).join("")}
             </div>
