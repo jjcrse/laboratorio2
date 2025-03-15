@@ -16,7 +16,6 @@ class NewsContainer extends HTMLElement {
                 :host {
                     display: flex;
                     justify-content: center;
-                    padding: 20px;
                     width: 100%;
                 }
 

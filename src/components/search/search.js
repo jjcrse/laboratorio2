@@ -9,10 +9,11 @@ class SearchBarCategories extends HTMLElement {
         <style>
           .container {
             display: flex;
-            gap: 10px;
+            gap: 20px;
             padding: 20px;
             border-radius: 8px;
-            margin-left: 460px;
+            justify-content: left;
+            margin-left: 8%;
           }
           button, .search {
             background: #222;

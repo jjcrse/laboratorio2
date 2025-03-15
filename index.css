@@ -15,10 +15,12 @@ body {
 }
 
 #titulos {
-    padding: 0px 470px;
+    padding: 0% 10%;
     box-sizing: border-box;
     flex: auto;
     width: auto;
+    justify-content: left;
+    margin-left: 0%;
 }
 
 #titulos h1 {
@@ -41,4 +43,15 @@ body {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
     pointer-events: none;
     z-index: 999;
+}
+
+#headerstyle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+componente-header{
+    display: flex;
+    justify-content: center;
 }

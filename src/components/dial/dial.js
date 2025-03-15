@@ -31,10 +31,10 @@ class CustomDial extends HTMLElement {
                 .pagination {
                     display: flex;
                     align-items: center;
+                    justify-content:center;
                     gap: 14px;
                     padding: 30px 0;
                     border-radius: 10px;
-                    margin-left: 460px;
                     margin-botton:5px;
                 }
 
